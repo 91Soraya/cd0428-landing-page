@@ -22,6 +22,8 @@
  * Define Global Variables
  * 
 */
+const navMenu = document.querySelector(".navbar__menu");
+const navList = document.querySelector("#navbar__list");
 
 
 /**
@@ -39,7 +41,13 @@
 */
 
 // build the nav
+const navSections = document.querySelectorAll("section");
 
+for (let i=0; i < navSections.length; i++) {
+    const createNavListItem = document.createElement("li");
+    createNavListItem.innerHTML = navSections[i].getAttribute("data-nav");
+    navList.appendChild(createNavListItem);
+}
 
 // Add class 'active' to section when near top of viewport
 
