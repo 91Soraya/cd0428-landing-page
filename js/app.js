@@ -24,7 +24,7 @@
 */
 const navMenu = document.querySelector(".navbar__menu");
 const navList = document.querySelector("#navbar__list");
-
+const navSections = document.querySelectorAll("section");
 
 /**
  * End Global Variables
@@ -41,17 +41,26 @@ const navList = document.querySelector("#navbar__list");
 */
 
 // build the nav
-const navSections = document.querySelectorAll("section");
-
 for (let i=0; i < navSections.length; i++) {
     const createNavListItem = document.createElement("li");
-    createNavListItem.innerHTML = navSections[i].getAttribute("data-nav");
+    const createNavAnchor = document.createElement("a");
+    createNavAnchor.innerHTML = navSections[i].getAttribute("data-nav");
+    createNavAnchor.href = "#" + navSections[i].getAttribute("id");
+    createNavListItem.appendChild(createNavAnchor);
     navList.appendChild(createNavListItem);
 }
 
 // Add class 'active' to section when near top of viewport
-
-
+const activeSection = navSections[0].getBoundingClientRect();
+window.addEventListener("scroll", function () {
+    // console.log(window.innerHeight);
+    // console.log(sectionOne.getBoundingClientRect().top);
+    if (activeSection.getBoundingClientRect().top < window.innerHeight) {
+        section.classList.add("your-active-class");
+    } else {
+        section.classList.remove("your-active-class");
+    }
+});
 // Scroll to anchor ID using scrollTO event
 
 
