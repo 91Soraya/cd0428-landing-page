@@ -26,7 +26,6 @@ const navMenu = document.querySelector(".navbar__menu");
 const navList = document.querySelector("#navbar__list");
 const sections = document.querySelectorAll("section");
 const createNavListItem = document.createElement("li");
-const createNavAnchor = document.createElement("a");
 
 /**
  * End Global Variables
@@ -57,12 +56,10 @@ for (let i=0; i < sections.length; i++) {
 // Add class 'active' to section when near top of viewport
 document.addEventListener("scroll", function () {
     sections.forEach(function (section) {
-        if(section.getBoundingClientRect().y <= 0 && section.getBoundingClientRect().bottom >0) {
+        if(section.getBoundingClientRect().y <= 100 && section.getBoundingClientRect().bottom >100) {
             section.classList.add("your-active-class");
-            // console.log("active class added");
         } else {
             section.classList.remove("your-active-class");
-            // console.log("active class removed");
         }
         });
 });
@@ -77,6 +74,17 @@ if(sections[i].classList.contains("your-active-class")) {
 }}})
 
 // Scroll to anchor ID using scrollTO event
+const navLinks = document.querySelectorAll("a");
+
+for (let i=0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener("click", (event) => {
+        event.preventDefault();
+        let sectionScroll = document.getElementById("section" + (i+1));
+        sectionScroll.scrollIntoView({
+            behavior: "smooth"
+        });
+    })
+}
 
 
 /**
@@ -90,3 +98,10 @@ if(sections[i].classList.contains("your-active-class")) {
 // Scroll to section on link click
 
 // Set sections as active
+
+// Notification that the form submission was successful.
+
+document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Thank you for your submission.");
+})
