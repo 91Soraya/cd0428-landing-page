@@ -88,6 +88,11 @@ section {
     transition: ease 0.3s all;
 }
 
+a.active {
+    font-weight: bold;
+    color: #fff;
+}
+
 /* Header Styles */
 .page__header {
     background:#cc1;
@@ -100,6 +105,10 @@ section {
 
 li {
     margin: 0.5em;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* Footer Styles */
