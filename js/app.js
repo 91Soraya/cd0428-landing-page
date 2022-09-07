@@ -25,6 +25,8 @@
 const navMenu = document.querySelector(".navbar__menu");
 const navList = document.querySelector("#navbar__list");
 const sections = document.querySelectorAll("section");
+const createNavListItem = document.createElement("li");
+const createNavAnchor = document.createElement("a");
 
 /**
  * End Global Variables
@@ -53,25 +55,6 @@ for (let i=0; i < sections.length; i++) {
 }
 
 // Add class 'active' to section when near top of viewport
-
-// const sectionThree = document.querySelector("#section3");
-
-// document.addEventListener("scroll", function() {
-//     const clientHeight = document.documentElement.clientHeight;
-//     const sectionThreeY = sectionThree.getBoundingClientRect().y;
-//     const sectionThreeBottom = sectionThree.getBoundingClientRect().bottom;
-
-//     // console.log(clientHeight);
-//     // console.log(sectionThreeY);
-//     // console.log(sectionThreeBottom);
-
-//     if(sectionThreeY <= 0 && sectionThreeBottom > 0) {
-//         sectionThree.classList.add("your-active-class");
-//     } else {
-//         sectionThree.classList.remove("your-active-class");
-//     }
-// })
-
 document.addEventListener("scroll", function () {
     sections.forEach(function (section) {
         if(section.getBoundingClientRect().y <= 0 && section.getBoundingClientRect().bottom >0) {
@@ -82,24 +65,16 @@ document.addEventListener("scroll", function () {
             // console.log("active class removed");
         }
         });
-})
+});
 
-// function navHighlight() {
-//     const navA = document.querySelectorAll("a");
-//     sections.forEach(function (section) {
-//         if(section.classList == "your-active-class") {
-//             navA.classList.add("active");
-//         } else {
-//             navA.classList.remove("active");
-//         }
-//     })
-// }
-
-// document.addEventListener("scroll", navHighlight);
-
-
-// const rect = sections.getBoundingClientRect();
-// console.log(rect);
+document.addEventListener("scroll", function () {
+    const listA = document.querySelectorAll("li a");
+    for (let i=0; i < sections.length; i++) {
+if(sections[i].classList.contains("your-active-class")) {
+    listA[i].classList.add("active");
+} else {
+    listA[i].classList.remove("active");
+}}})
 
 // Scroll to anchor ID using scrollTO event
 
