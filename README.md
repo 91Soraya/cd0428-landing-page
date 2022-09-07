@@ -1,13 +1,10 @@
-# Landing Page Project
+Landing page project Udacity
 
-## Table of Contents
+Specifications:
+* Dynamically built navigation using Append, appendChild and innerHTML. 
 
-* [Instructions](#instructions)
+* The active section should be visible in the navigation bar
 
-## Instructions
+* When navigation via the navigation bar, it should be a smooth scroll to the selected section.
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+* Subscription form added with name and email. A notification should be visible when submission was succesful. 
