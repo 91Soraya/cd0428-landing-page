@@ -260,3 +260,15 @@ form:valid #submit {
   color: white;
   background-color: #cc1;
 }
+
+.formWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+ .submissionForm {
+  flex-grow: 3;
+ }
